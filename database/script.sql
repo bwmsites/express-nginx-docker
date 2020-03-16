@@ -1,6 +1,13 @@
 CREATE DATABASE IF NOT EXISTS avaliacao;
 USE avaliacao;
 
+CREATE TABLE IF NOT EXISTS usuario (
+    id INT(11) AUTO_INCREMENT,
+    login VARCHAR(255),
+    senha VARCHAR(255),
+    PRIMARY KEY (id)
+);
+
 CREATE TABLE IF NOT EXISTS curriculo (
   id INT(11),
   nome VARCHAR(255),
@@ -18,3 +25,5 @@ CREATE TABLE IF NOT EXISTS curriculo_exp (
   atribuicoes TEXT,
   PRIMARY KEY (id)
 );
+
+INSERT INTO usuario(login, senha) VALUES('evaluation', 'challenge');
