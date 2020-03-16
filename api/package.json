@@ -1,0 +1,27 @@
+{
+  "name": "express-nginx-docker",
+  "version": "1.0.0",
+  "description": "Simple project that serves an Express.js app via Nginx. The structure aims to be ready for microservices, so, we're using docker.",
+  "main": "app.js",
+  "scripts": {
+    "prestart": "npm install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bwmsites/express-nginx-docker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bwmsites/express-nginx-docker/issues"
+  },
+  "homepage": "https://github.com/bwmsites/express-nginx-docker#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}

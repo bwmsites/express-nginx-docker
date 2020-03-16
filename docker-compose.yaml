@@ -1,0 +1,30 @@
+version: "3"
+services: 
+    database:
+        image: mysql
+        container_name: "database-container"
+        restart: "always"
+        volumes:
+            - ./database/data:/var/lib/mysql
+        ports:
+            - "3307:3306"
+        environment:
+            MYSQL_ROOT_PASSWORD: avaliacao
+        networks:
+            - curriculum
+    api:
+        image: node:10-slim
+        container_name: "node-container"
+        ports:
+            - "9000:9000"
+        working_dir: "/home/node/app"
+        volumes:
+            - ./api:/home/node/app
+        command: "npm start"
+        networks:
+            - curriculum
+        depends_on:
+            - database
+networks:
+    curriculum:
+        driver: "bridge"
